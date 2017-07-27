@@ -1,0 +1,29 @@
+{
+  "name": "Element Observer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "セレクタで指定した要素の値を監視します",
+  "icons": {
+    "48": "icon_32.png",
+    "128": "icon_128.png",
+    "32": "icon_32.png"
+  },
+  "browser_action": {
+    "default_icon": "icon_32.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/libs/jquery-2.2.2.min.js", "js/libs/jquery-ui-1.12.1.custom/jquery-ui.min.js", "js/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/libs/jquery-2.2.2.min.js"></script>
+    <script src="js/options.js"></script>
+    <style>
+    ul {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    ul li {
+        list-style: none;
+        margin-top: 5px;
+    }
+
+    label {
+        margin-right: 15px;
+    }
+
+    #save {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <h3 align="center">監視要素</h3>
+    <button id="add-target">Add</button>
+    <button id="save-target">Save</button>
+    <ul>
+        <div id="target-area">
+        </div>
+        <div id="dummy-target-area" style="display:none;">
+            <div class="target-element">
+                <input type="checkbox" name="effective" title="無効にする場合はチェックを外してください。" checked>
+                <input type="text" name="selector" style="width: 50%" placeholder="セレクタを記述してください。">
+                <label><input type="radio" class="valueType" name="valueType" value="0" checked>val</label>
+                <label><input type="radio" class="valueType" name="valueType" value="1">text</label>
+                <label><input type="radio" class="valueType" name="valueType" value="2">css</label>
+                <label style="margin-left:10px;">監視間隔</label><input type="text" name="interval" style="width: 50px"><label style="margin-left:5px;">ms</label>
+                <br>
+<!--                 <div style="text-align: right;">
+                    <input type="text" name="cssTarget" style="width:50%; margin-top: 5px; display:none; " placeholder="対象のスタイルを指定してください。">
+                </div> -->
+            </div>
+        </div>
+    </ul>
+    <div id="import-export-area" style="display:none; margin-top:10px;">
+        <button id="import">import</button>
+        <button id="export">export</button>
+        <textarea rows="5" id="import-export-text" style="width:100%;"></textarea>
+    </div>
+</body>
+
+</html>
